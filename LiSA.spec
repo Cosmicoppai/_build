@@ -1,5 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from PyInstaller.config import CONF
+CONF['distpath'] = "./tete"
+
 
 block_cipher = None
 
@@ -8,7 +11,7 @@ a = Analysis(
     ['backend\\main.py'],
     pathex=[],
     binaries=[('ffmpeg-5.1.2-essentials_build\\bin\\ffmpeg.exe', '.')],
-    datas=[('backend/defaults', 'defaults'), ('backend/sql_queries', 'sql_queries'), ('backend/scripts', 'scripts'),
+    datas=[('backend/defaults', 'defaults'), ('backend/sql_queries', 'sql_queries'),
      ('backend/config/config.json', '.')],
     hiddenimports=[],
     hookspath=[],
